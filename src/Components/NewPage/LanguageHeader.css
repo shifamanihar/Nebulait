@@ -1,0 +1,30 @@
+.language-header {
+    background: #cdeeff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .language-header h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .language-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .language-tabs span {
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .language-tabs .active-tab {
+    border: 2px solid #000;
+    border-radius: 6px;
+  }
+  

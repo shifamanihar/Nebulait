@@ -1,0 +1,168 @@
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+.header .images-wrapper{
+
+    width: 120px;
+    /* height: 90px; */
+    margin-top: 10px;
+    margin-left: 5%;
+}
+
+.header .images-wrapper img{
+
+    width: 80px;
+    height:80px;
+    padding: 10px;
+}
+
+.header .search-box{
+    width: 32%;
+    margin-top: 30px;
+    margin-left: 20px;
+    position: relative;
+
+}
+.header .search-box span{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    opacity: 0.8;
+}
+.header .search-box input{
+    width: 100%;
+    padding: 5px 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.266);
+}
+
+.header nav{
+    width: 28%;
+    margin-top: 15px;
+    padding: 0;
+    display: flex;
+    align-items: center ;
+    
+}
+
+.header nav li{
+    margin: 0 20px;
+    font-size: 18px;
+    position: relative;
+    list-style: none;
+    
+}
+
+.header nav li button:hover{
+
+   color: #f92c8b;
+    
+}
+
+
+.header nav li .dropdown_menu{
+    position: absolute;
+    top: 150%;
+    left: -245%;
+    width: 950px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 15px rgba(0 0 0/ 20%);
+    z-index: 100; 
+
+    transition: all 0.2s ease-in-out;
+    display: flex;
+}
+
+
+.header nav li .dropdown_menu .left-box{
+
+    width: 20%;
+    border-right:1px solid rgba(0, 0, 0, 0.267) ;
+    /* background-color: #f92c8b; */
+}
+.header nav li .dropdown_menu .left-box li{
+    padding: 10px 0;
+    text-align: center;
+}
+.header nav li .dropdown_menu .right-box{
+
+    width: 80%;
+    /* background-color: #6e0637; */
+}
+
+.header nav li .dropdown_menu .right-box .pro-box{
+
+    width: 80%;
+    height: 100px;
+    background-color: #ccedff;
+    margin-left: 6%;
+    margin-top: 20px;
+}
+
+.header nav li .dropdown_menu .right-box .course-detail-box{
+
+    width: 80%;
+    /* height: 200px; */
+    /* background-color: #f92c8b; */
+    margin: 20px 0 0 6% ;
+}
+
+.header nav li .dropdown_menu .right-box .course-detail-box .topic-list{
+    width: 40%;
+    height: auto;
+    border-right:1px solid rgba(0, 0, 0, 0.267) ;
+
+
+}
+
+.header nav li .dropdown_menu .right-box .course-detail-box .topic-list p{
+    font-size:25px;
+    font-weight: 600;
+}
+
+.header nav li .dropdown_menu .right-box .course-detail-box .material-list{
+    width: 40%;
+    height: auto;
+}
+
+.header nav li .dropdown_menu .right-box .course-detail-box .material-list p{
+    font-size:25px;
+    font-weight: 600;
+}
+
+
+.text-color{
+    color: white !important;
+
+}
+.header .right-end-btn{
+    width: 25%;
+    margin-top: 25px;
+
+}
+
+
+
+.header .right-end-btn li{
+    margin: 0 10px;
+  
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    /* margin-left: auto; */
+}
+
+.header .right-end-btn li button{
+    font-size: 15px;
+    background: linear-gradient(to right, #f92c8b 0%, #b02cd6 100%);
+    color: #ffffff;
+    border-radius: 100px;
+    padding: 10px 10px;
+}
+
