@@ -1,0 +1,49 @@
+.sidebar {
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .menu-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  
+  .menu-card:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .menu-title {
+    padding: 15px 20px;
+    font-weight: 600;
+    color: #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .arrow {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  .submenu {
+    padding: 0 20px 10px 20px;
+  }
+  
+  .submenu-item {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .submenu-item:last-child {
+    border-bottom: none;
+  }
+  

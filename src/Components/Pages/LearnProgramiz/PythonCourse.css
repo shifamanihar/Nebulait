@@ -1,0 +1,94 @@
+/* Background Colors */
+.bg-peach {
+    background-color: #ffe9d7;
+  }
+  
+  .bg-purple {
+    background-color: #b236f0;
+    color: #fff;
+  }
+  
+  /* Text Colors */
+  .text-primary {
+    color: #2563eb !important;
+  }
+  
+  .text-danger {
+    color: #dc3545 !important;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background-color: #0061ff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #004dd1;
+  }
+  .code-box {
+      display: flex;
+      background-color: #f9fbff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+      max-width: 850px;
+      margin: 30px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .code-column {
+      flex: 1;
+      padding: 24px;
+      background-color: #f9fbff;
+      text-align: left;
+    }
+    
+    .code-divider {
+      width: 1px;
+      background-color: #e0e0e0;
+    }
+    
+    .code-title {
+      font-weight: bold;
+      font-size: 22px;
+      color: #1e1e4f;
+      margin-bottom: 20px;
+    }
+    
+    .code-content {
+      white-space: pre;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    /* Color classes */
+    .purple { color: #c084fc; }
+    .orange { color: #f59e0b; }
+    .green  { color: #10b981; }
+    .blue   { color: #3b82f6; }
+    .learn-container,text-center,.contents,.contents2{
+      max-width: 750px;
+      margin: 40px auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      color: #1e1e4f;
+      padding: 0 20px;
+    }
+    .link-list a:hover {
+      text-decoration: underline;
+    }
+   
+/* ✅ Styled horizontal line */
+.section-divider {
+  margin-top: 3rem;
+  width: 60%;
+  height: 3px;
+  background-color: #7a8a9a;
+  border: none;
+  border-radius: 2px;
+}
+
+    
+  

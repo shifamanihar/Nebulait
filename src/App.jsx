@@ -1,11 +1,11 @@
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
-import NewPage from './Components/NewPage/NewPage';
-import TutorialHome from './Components/TutorialHome';
-import OnlineCompilers from './Components/OnlineCompilers';
+import NewPage from './Components/Pages/NewPage/NewPage';
+import OnlineCompilers from './Components/Pages/OnlineCompilers/OnlineCompilers';
 
-// Compiler Pages
 import PythonCompiler from './CompilerPages/PythonCompiler';
 import RCompiler from './CompilerPages/RCompiler';
 import SQLEditor from './CompilerPages/SQLEditor';
@@ -20,21 +20,32 @@ import PHPCompiler from './CompilerPages/PHPCompiler';
 import SwiftCompiler from './CompilerPages/SwiftCompiler';
 import RustCompiler from './CompilerPages/RustCompiler';
 
+import Login from './Components/Login/Login';
+import StartLearning from './LearningPathPytho/StartLearning';
+import CreateProject from './LearningPathPytho/CreateProject';
+import Enrollment from './LearningPathPytho/Enrollment';
+import PythonCourse from './Components/Pages/LearnProgramiz/PythonCourse';
+import WebsiteFooter from './Components/Pages/WebsiteFooter/WebsiteFooter';
+import Sidebar from './Components/Pages/SideBar/SideBar';
+
 function App() {
   return (
     <BrowserRouter>
       <Header />
+
       <Routes>
-        {/* Existing pages */}
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<div>Contact Page</div>} />
-        <Route path="/newpage" element={<NewPage />} />
-        <Route path="/tutorial" element={<TutorialHome />} />
-
-        {/* Online Compilers Page */}
+        <Route path="/course/:courseName" element={<PythonCourse />} />
+        {/* <Route path="/tutorial" element={<TutorialHome />} /> ❌ Removed this */}
         <Route path="/compilers" element={<OnlineCompilers />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/start-learning" element={<StartLearning />} />
+        <Route path="/create-project" element={<CreateProject />} />
+        <Route path="/try-now" element={<Enrollment />} />
+        <Route path="/menu" element={<Sidebar />} />
 
-        {/* Compiler Routes */}
+        {/* Compiler Pages */}
         <Route path="/compiler/python" element={<PythonCompiler />} />
         <Route path="/compiler/r" element={<RCompiler />} />
         <Route path="/compiler/sql" element={<SQLEditor />} />
@@ -49,6 +60,8 @@ function App() {
         <Route path="/compiler/swift" element={<SwiftCompiler />} />
         <Route path="/compiler/rust" element={<RustCompiler />} />
       </Routes>
+
+      <WebsiteFooter />
     </BrowserRouter>
   );
 }

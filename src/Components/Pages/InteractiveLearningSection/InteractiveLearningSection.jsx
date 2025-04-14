@@ -1,37 +1,36 @@
-import React, { useState } from 'react';
-import './InteractiveLearningSection.css';
+import React, { useState } from "react";
+import "./InteractiveLearningSection.css";
 
-import video1 from './video/pro-sensai-demo.mp4';
-import video2 from './video/pro-project-demo.mp4';
-import video3 from './video/pro-interactive-course-demo.mp4';
-import video4 from './video/pro-challenges-demo.mp4';
-import video5 from './video/pro-certificate-demo.mp4';
-import video6 from './video/pro-certificate-demo.mp4'; // You can update this if needed
+import video1 from "../../video/pro-sensai-demo.mp4";
+import video2 from "../../video/pro-project-demo.mp4";
+import video3 from "../../video/pro-interactive-course-demo.mp4";
+import video4 from "../../video/pro-challenges-demo.mp4";
+import video5 from "../../video/pro-certificate-demo.mp4";
 
 const features = [
   {
-    title: 'Hands-on learning',
-    description: 'Practice what you learn with our interactive courses, practice problems, and quizzes.',
+    title: "Hands-on learning",
+    description: "Practice what you learn with our interactive courses, practice problems, and quizzes.",
     video: video1,
   },
   {
-    title: 'Practice projects',
-    description: 'Build your confidence through guided real-world projects.',
+    title: "Practice projects",
+    description: "Build your confidence through guided real-world projects.",
     video: video2,
   },
   {
-    title: 'Coding challenges',
-    description: 'Level up your skills with our challenges and compete on our global leaderboard.',
+    title: "Coding challenges",
+    description: "Level up your skills with our challenges and compete on our global leaderboard.",
     video: video3,
   },
   {
-    title: 'AI mentor',
-    description: 'Get personalized AI help with code explanation, error fixing, and feedback for improvements.',
+    title: "AI mentor",
+    description: "Get personalized AI help with code explanation, error fixing, and feedback for improvements.",
     video: video4,
   },
   {
-    title: 'Professional certificates',
-    description: 'Showcase your expertise and stand out to your potential employers.',
+    title: "Professional certificates",
+    description: "Showcase your expertise and stand out to your potential employers.",
     video: video5,
   },
 ];
@@ -52,7 +51,7 @@ export default function InteractiveLearningSection() {
             <div key={index} className="feature-block">
               <button
                 className={`feature-button-box ${
-                  selectedFeature === feature.title ? 'active' : ''
+                  selectedFeature === feature.title ? "active" : ""
                 }`}
                 onClick={() => setSelectedFeature(feature.title)}
               >
@@ -80,4 +79,3 @@ export default function InteractiveLearningSection() {
     </section>
   );
 }
-

@@ -1,75 +1,102 @@
-.homepage{
-    background: linear-gradient(to bottom, #c7ecff 0%, #f9efff 100%)
-}
-
-
-.homepage .content-box{
+.homepage {
+    background: linear-gradient(to bottom, #c7ecff 0%, #ffeffe 100%);
+    min-height: 100vh;
+    padding: 80px 0;
+    overflow-x: hidden;
+  }
+  
+  /* Left-Right Layout */
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 80px;
+  }
+  
+  /* LEFT: Content Box */
+  .content-box {
     width: 500px;
-    height: 500px;
-    /* background-color: aqua; */
-
-}
-
-.homepage .content-box h1{
-    padding: 10px 0 0 10px;
-    margin: 25px 10px ;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .content-box h1 {
     font-size: 60px;
     line-height: 72px;
     font-weight: 700;
-}
-
-.homepage .content-box p{
-    padding: 10px 0 0 10px;
-    margin: 25px 10px ;
+    color: #0e0e49;
+    margin-bottom: 20px;
+  }
+  
+  .content-box p {
     font-size: 20px;
-}
-
-.homepage .content-box button{    
-    padding: 10px 15px;
-    margin: 0 10px ;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .content-box button {
+    padding: 12px 25px;
     background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
     color: white !important;
-    border-radius: 25px;
-}
-
-.homepage .content-box button .circle{
-
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .content-box button .circle {
     background: rgba(255, 255, 255, 0.2);
-    display: block;
     position: absolute;
     top: -10%;
     right: -130px;
     width: 200px;
     height: 110px;
     border-radius: 50%;
-}
-
-
-
-
-.homepage .homepage-img{
-    width: 500px;
-    height: 500px;
-    background-color: rgb(0, 21, 255);
-}
-
-.go-to-newpage {
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 60px;
   }
   
-  .newpage-btn {
-    background-color: #f52887;
+  /* RIGHT: Image Box */
+  .image-box {
+    width: 600px;
+    height: 600px;
+    background-color: #eaf5fc;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
+
+  .try-now-box {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .try-now-btn {
+    background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
     color: white;
-    padding: 12px 30px;
-    border-radius: 6px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    transition: background 0.3s ease;
   }
   
-  .newpage-btn:hover {
-    background-color: #b041ff;
+  .try-now-btn:hover {
+    background: linear-gradient(to right, #ff6b6b 0%, #ff1f8e 100%);
   }
+  

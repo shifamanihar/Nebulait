@@ -33,13 +33,12 @@
   display: flex;
   flex-direction: column;
 }
+ 
 
-/* 👇 Each block has some space below */
 .feature-block {
   margin-bottom: 25px;
 }
 
-/* 👇 Compiler-style buttons with soft corners and hover */
 .feature-button-box {
   background-color: #fff;
   border: 2px solid #e24aa0;
@@ -48,10 +47,14 @@
   cursor: pointer;
   border-radius: 10px;
   width: 100%;
-  text-align: left;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #e24aa0;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
 .feature-button-box:hover,
@@ -69,6 +72,7 @@
   color: #333;
   margin-top: 10px;
   margin-left: 10px;
+  text-align: center;
 }
 
 .try-pro-button {
@@ -90,7 +94,7 @@
 
 .right {
   flex: 1;
-  max-width: 600px;
+  max-width: 750px;  
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   overflow: hidden;
@@ -98,5 +102,8 @@
 
 .feature-video {
   width: 100%;
+  height: auto;
   border-radius: 10px;
+  height: 500px;
 }
+ 
