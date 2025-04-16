@@ -32,12 +32,10 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<div>Contact Page</div>} />
         <Route path="/course/:courseName" element={<PythonCourse />} />
-        {/* <Route path="/tutorial" element={<TutorialHome />} /> ❌ Removed this */}
         <Route path="/compilers" element={<OnlineCompilers />} />
         <Route path="/login" element={<Login />} />
         <Route path="/start-learning" element={<StartLearning />} />
@@ -45,7 +43,6 @@ function App() {
         <Route path="/try-now" element={<Enrollment />} />
         <Route path="/menu" element={<Sidebar />} />
 
-        {/* Compiler Pages */}
         <Route path="/compiler/python" element={<PythonCompiler />} />
         <Route path="/compiler/r" element={<RCompiler />} />
         <Route path="/compiler/sql" element={<SQLEditor />} />
@@ -60,7 +57,6 @@ function App() {
         <Route path="/compiler/swift" element={<SwiftCompiler />} />
         <Route path="/compiler/rust" element={<RustCompiler />} />
       </Routes>
-
       <WebsiteFooter />
     </BrowserRouter>
   );

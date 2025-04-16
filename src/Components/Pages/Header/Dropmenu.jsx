@@ -6,7 +6,6 @@ import EastIcon from '@mui/icons-material/East';
 
 export default function Dropmenu({ isOpen }) {
 
-
     const topics = ["Java", "HTML", "CSS", "MySQL"];
 
   return (
@@ -15,21 +14,17 @@ export default function Dropmenu({ isOpen }) {
            <div className="left-box">
                 <ul className="pt-2 list list-inline">
                     {topics.map((topic, index) => (
-
                         <li key={index}>
                             <Link to={`/${topic.toLowerCase()}`} className="FS">
                                 {topic}
                             </Link>
                         </li>
-
                     ))}
                 </ul>
             </div>
 
             <div className="right-box">
-                <div className="pro-box">
-
-                </div>
+                <div className="pro-box"></div>
 
                 <div className="course-detail-box d-flex justify-content-around ">
                     <div className="topic-list">    
@@ -55,15 +50,11 @@ export default function Dropmenu({ isOpen }) {
                             <li className='m-0 my-3 '>
                                 <Button className='w-100 bg-primary text-color'>Map <span> <EastIcon className='ms-3'/> </span></Button>
                             </li>
-                            
                         </ul>
-                        
                     </div>
                 </div>
-
             </div>
         </div>
-    
     </>
   )
-}
+}  

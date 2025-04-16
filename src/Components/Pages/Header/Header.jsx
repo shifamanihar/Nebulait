@@ -11,54 +11,61 @@ import Dropmenu from './Dropmenu';
 
 export default function Header() {
     const [openDropdown, setOpenDropdown] = useState(null);
+    const navigate = useNavigate();
 
     const toggleDropdown = (menu) => {
         setOpenDropdown(openDropdown === menu ? null : menu);
     };
 
-    const navigate = useNavigate();
-
     const handleLoginClick = () => {
-        navigate("/login"); // ✅ fixed lowercase route
+        navigate("/login");
     };
 
     return (
         <div className='header container-fluid'>
-            <div className="row">
-                <div className="images-wrapper col-md-2">
+            <div className="row align-items-center">
+                <div className="images-wrapper col-auto">
                     <img src={logo} alt="Logo" />
                 </div>
 
-                <div className="search-box col-md-3">
+                <div className="search-box col">
                     <span><SearchIcon /></span>
                     <input type="text" placeholder='Search Tutorial & Examples' />
                 </div>
 
-                <nav className='col-md-5'>
-                    <ul className='list list-inline mb-0'>
-                        <li className='list-inline-item mx-2' onClick={() => toggleDropdown("tutorial")}>
+                <nav className='col-auto'>
+                    <ul className='list list-inline mb-0 d-flex align-items-center'>
+                        <li className='list-inline-item' onClick={() => toggleDropdown("tutorial")}>
                             <Button>
                                 Tutorial <ExpandMoreIcon className='ms-2' />
                             </Button>
                             {openDropdown === "tutorial" && <Dropmenu />}
                         </li>
 
-                        <li className='list-inline-item mx-2' onClick={() => toggleDropdown("examples")}>
+                        <li className='list-inline-item' onClick={() => toggleDropdown("examples")}>
                             <Button>
                                 Examples <ExpandMoreIcon className='ms-2' />
                             </Button>
                             {openDropdown === "examples" && <Dropmenu />}
                         </li>
 
-                        <li className='list-inline-item mx-2'>
+                        <li className='list-inline-item' onClick={() => toggleDropdown("courses")}>
                             <Button>
                                 Courses <ExpandMoreIcon className='ms-2' />
                             </Button>
+                            {openDropdown === "courses" && <Dropmenu />}
+                        </li>
+
+                        <li className='list-inline-item' onClick={() => toggleDropdown("career")}>
+                            <Button>
+                                Career <ExpandMoreIcon className='ms-2' />
+                            </Button>
+                            {openDropdown === "career" && <Dropmenu />}
                         </li>
                     </ul>
                 </nav>
 
-                <ul className='right-end-btn col-md-2 list list-inline'>
+                <ul className='right-end-btn col-auto list list-inline mb-0 d-flex align-items-center'>
                     <li className='list-inline-item'>
                         <Link to="/contact">
                             <Button className='phone-btn'>
@@ -68,13 +75,15 @@ export default function Header() {
                     </li>
 
                     <li className='list-inline-item'>
-                        <Button className='pro-btn' onClick={handleLoginClick}>
-                            Upgrade To Pro
+                        <Button className='pro-btn' onClick={handleLoginClick} disableElevation>
+                            UPGRADE TO PRO
                         </Button>
                     </li>
 
                     <li className='list-inline-item ms-1'>
-                        <Button><SettingsIcon /></Button>
+                        <Button className='settings-btn'>
+                            <SettingsIcon />
+                        </Button>
                     </li>
                 </ul>
             </div>

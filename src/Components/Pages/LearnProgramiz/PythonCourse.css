@@ -1,94 +1,359 @@
-/* Background Colors */
-.bg-peach {
-    background-color: #ffe9d7;
-  }
-  
-  .bg-purple {
-    background-color: #b236f0;
-    color: #fff;
-  }
-  
-  /* Text Colors */
-  .text-primary {
-    color: #2563eb !important;
-  }
-  
-  .text-danger {
-    color: #dc3545 !important;
-  }
-  
-  /* Buttons */
-  .btn-primary {
-    background-color: #0061ff;
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #004dd1;
-  }
-  .code-box {
-      display: flex;
-      background-color: #f9fbff;
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      overflow: hidden;
-      font-family: 'Courier New', monospace;
-      max-width: 850px;
-      margin: 30px auto;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-    
-    .code-column {
-      flex: 1;
-      padding: 24px;
-      background-color: #f9fbff;
-      text-align: left;
-    }
-    
-    .code-divider {
-      width: 1px;
-      background-color: #e0e0e0;
-    }
-    
-    .code-title {
-      font-weight: bold;
-      font-size: 22px;
-      color: #1e1e4f;
-      margin-bottom: 20px;
-    }
-    
-    .code-content {
-      white-space: pre;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    
-    /* Color classes */
-    .purple { color: #c084fc; }
-    .orange { color: #f59e0b; }
-    .green  { color: #10b981; }
-    .blue   { color: #3b82f6; }
-    .learn-container,text-center,.contents,.contents2{
-      max-width: 750px;
-      margin: 40px auto;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.8;
-      color: #1e1e4f;
-      padding: 0 20px;
-    }
-    .link-list a:hover {
-      text-decoration: underline;
-    }
-   
-/* ✅ Styled horizontal line */
-.section-divider {
-  margin-top: 3rem;
-  width: 60%;
-  height: 3px;
-  background-color: #7a8a9a;
-  border: none;
-  border-radius: 2px;
+ /* === Python Course Page Layout === */
+.python-course-page {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
 }
 
-    
-  
+/* === Sticky Enroll Box for Python Course === */
+.sticky-enroll {
+  position: sticky;
+  top: 20px;
+  width: 320px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.python-course-right .enroll-btn {
+  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.python-course-right .enroll-btn:hover {
+  background: linear-gradient(to right, #ff1f8e 0%, #ffbd84 100%);
+}
+
+.python-course-benefits {
+  margin-top: 15px;
+}
+
+.python-course-benefits p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.salary {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #2732ae;
+}
+
+/* === Main Content for Python Course === */
+.python-course-content {
+  flex: 1;
+}
+
+/* === Python Course Intro === */
+.python-course-container {
+  background-color: #fff0f7;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.python-course-image {
+  width: 60px;
+  height: 60px;
+}
+
+.python-course-tag {
+  color: #f03aa4;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.python-course-title {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.python-course-description {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.python-course-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* === Learning Path Overview for Python Course === */
+.python-learning-overview {
+  background-color: #fffeff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.python-learning-overview h2 {
+  margin-bottom: 20px;
+}
+
+.python-course-box {
+  border-left: 5px solid #f687bd;
+  background-color: #fff0f7;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.python-course-box h4 {
+  color: #ff1f8e;
+  margin-bottom: 4px;
+}
+
+.python-course-box h3 {
+  margin-bottom: 6px;
+}
+
+.start-learning-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.start-learning-btn {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+  color: #fff0f7;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.start-learning-btn:hover {
+  background: linear-gradient(to right, #ff1f8e 0%, #ffbd84 100%);
+}
+
+/* === Python Projects Section === */
+.python-projects-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.python-projects-section h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.python-projects-section span {
+  color: #ff1f8e;
+}
+
+.python-project-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.python-project-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.python-project-card {
+  width: 200px;
+  padding: 15px;
+  background-color: #fff0f7;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.python-project-card:hover {
+  transform: translateY(-5px);
+}
+
+.python-project-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* === Python Certificate Section === */
+.python-certificate-section-wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.python-certificate-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.python-cert-preview {
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.python-cert-text h2 {
+  margin-bottom: 10px;
+}
+
+.python-cert-text p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.python-claim-button {
+  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.python-claim-button:hover {
+  background: linear-gradient(to right, #ff1f8e 0%, #ffbd84 100%);
+}
+
+/* === Popup Styles for Python Course === */
+.python-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.python-popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.python-popup img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.python-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* === Responsive Design for Python Course === */
+@media (max-width: 992px) {
+  .python-course-page {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sticky-enroll {
+    width: 100%;
+    position: relative;
+  }
+
+  .python-certificate-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .python-cert-text {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.cert-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.python-claim-button {
+  padding: 10px 20px;
+  background-color: #4caf50; /* customize as needed */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+/* Popup styling */
+.python-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.python-popup {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.python-popup img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.python-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
