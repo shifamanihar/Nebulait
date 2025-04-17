@@ -5,7 +5,7 @@ const Login = () => {
   const [isSignUpActive, setIsSignUpActive] = useState(false);
 
   return (
-    <div className={`container ${isSignUpActive ? 'right-panel-active' : ''}`} id="container">
+    <div className={`container login-container ${isSignUpActive ? 'right-panel-active' : ''}`} id="container">
       <div className="form-container sign-up-container">
         <form>
           <h1>Create Account</h1>

@@ -27,6 +27,8 @@ import Enrollment from './LearningPathPytho/Enrollment';
 import PythonCourse from './Components/Pages/LearnProgramiz/PythonCourse';
 import WebsiteFooter from './Components/Pages/WebsiteFooter/WebsiteFooter';
 import Sidebar from './Components/Pages/SideBar/SideBar';
+import JobNotificationPage from "./Components/Pages/JobNotificationPage/JobNotificationPage";
+
 
 function App() {
   return (
@@ -56,7 +58,8 @@ function App() {
         <Route path="/compiler/php" element={<PHPCompiler />} />
         <Route path="/compiler/swift" element={<SwiftCompiler />} />
         <Route path="/compiler/rust" element={<RustCompiler />} />
-      </Routes>
+        <Route path="/job-notification" element={<JobNotificationPage />} />
+       </Routes>
       <WebsiteFooter />
     </BrowserRouter>
   );

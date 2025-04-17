@@ -1,32 +1,59 @@
 import React, { useState } from "react";
 import "./Enrollment.css";
 import certificateImg from "./images/certificate.png";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Enrollment = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [enrolled, setEnrolled] = useState(false);
-  const navigate = useNavigate(); // 👈 Add this line
-
+  const navigate = useNavigate();
 
   const handleEnrollClick = () => {
     setEnrolled(true);
     setTimeout(() => {
       setEnrolled(false);
-      navigate("/login"); // 👈 Navigate to login after 3 seconds
-    }, 3000);
+      navigate("/login");
+    }, 1000);
   };
 
   const togglePopup = () => {
     setShowPopup((prev) => !prev);
   };
-  const slidebar = useNavigate();
+
   const handleMenuClick = () => {
-    slidebar("/menu");
+    navigate("/menu");
   };
+
+  const handleJobNotificationClick = () => {
+    navigate("/job-notification");
+  };
+
+  const courseTitles = [
+    "Learn Python Basics",
+    "Practice: Python Basics",
+    "Learn Python Intermediate",
+    "Practice: Python Intermediate",
+    "Build Final Project"
+  ];
+
+  const projects = [
+    {
+      title: "Rock, Paper & Scissors",
+      img: "https://cdn-icons-png.flaticon.com/512/184/184250.png"
+    },
+    {
+      title: "Tic Tac Toe",
+      img: "https://cdn-icons-png.flaticon.com/512/342/342362.png"
+    },
+    {
+      title: "QR Code Generator",
+      img: "https://cdn-icons-png.flaticon.com/512/6081/6081304.png"
+    }
+  ];
+
   return (
     <div className="enrollment-page">
-      {/* === Sticky Left Side Box === */}
+      {/* === Sticky Right Sidebar === */}
       <aside className="sticky-enroll">
         <div className="course-right">
           <button onClick={handleEnrollClick} className="enroll-btn" aria-label="Enroll Button">
@@ -42,10 +69,19 @@ const Enrollment = () => {
           </div>
           <p className="salary">💰 Average Salary (IN): ₹5,80,000</p>
           <p>📦 Prerequisites: None</p>
+          <hr className="border-t-2 border- darkgray-300 mb-4" />
+          {/* === Job Notification Section (Moved here) === */}
+          <div className="job-notification-box">
+            <h2>Stay Updated with Job Notifications</h2>
+            <p>Get the latest job opportunities in the tech industry tailored to your skills.</p>
+            <button className="job-notification-btn" onClick={handleJobNotificationClick}>
+              View Job Notifications
+            </button>
+          </div>
         </div>
       </aside>
 
-      {/* === Main Content Section === */}
+      {/* === Main Content === */}
       <main className="main-content">
         {/* === Course Intro === */}
         <section className="course-container">
@@ -75,26 +111,18 @@ const Enrollment = () => {
         {/* === Learning Path Overview === */}
         <section className="learning-overview">
           <h2>Learning Path Overview</h2>
-          {[1, 2, 3, 4, 5].map((num) => (
-            <article className="course-box" key={num}>
-              <h4>Course {num}</h4>
-              <h3>
-                {[
-                  "Learn Python Basics",
-                  "Practice: Python Basics",
-                  "Learn Python Intermediate",
-                  "Practice: Python Intermediate",
-                  "Build Final Project"
-                ][num - 1]}
-              </h3>
-              <p>Course {num} description goes here. Learn and practice key skills.</p>
+          {courseTitles.map((title, index) => (
+            <article className="course-box" key={index}>
+              <h4>Course {index + 1}</h4>
+              <h3>{title}</h3>
+              <p>Course {index + 1} description goes here. Learn and practice key skills.</p>
             </article>
           ))}
 
           <div className="start-learning-container">
-            <button className="start-learning-btn" 
-             onClick={handleMenuClick}>
-              Get Started Learning</button>
+            <button className="start-learning-btn" onClick={handleMenuClick}>
+              Get Started Learning
+            </button>
           </div>
         </section>
 
@@ -106,20 +134,7 @@ const Enrollment = () => {
           </h2>
           <p className="project-subtitle">Projects you will create:</p>
           <div className="project-grid">
-            {[
-              {
-                title: "Rock, Paper & Scissors",
-                img: "https://cdn-icons-png.flaticon.com/512/184/184250.png"
-              },
-              {
-                title: "Tic Tac Toe",
-                img: "https://cdn-icons-png.flaticon.com/512/342/342362.png"
-              },
-              {
-                title: "QR Code Generator",
-                img: "https://cdn-icons-png.flaticon.com/512/6081/6081304.png"
-              }
-            ].map((project) => (
+            {projects.map((project) => (
               <div className="project-card" key={project.title}>
                 <img src={project.img} alt={`${project.title} Icon`} />
                 <div>
@@ -151,7 +166,7 @@ const Enrollment = () => {
             <div className="popup" onClick={(e) => e.stopPropagation()}>
               <img src={certificateImg} alt="Full Certificate Preview" />
               <button className="popup-close" onClick={togglePopup}>
-                × 
+                ×
               </button>
             </div>
           </div>

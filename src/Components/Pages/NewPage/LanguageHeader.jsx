@@ -8,7 +8,7 @@ export default function LanguageHeader() {
 
   return (
     <div className="language-header">
-      <h2>Learn Python Nebula</h2>
+      <h2>Learn Python programming</h2>
       <div className="language-tabs">
         {tabs.map((tab) => (
           <button

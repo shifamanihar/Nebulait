@@ -370,3 +370,121 @@ body {
   cursor: pointer;
 }
 
+/* === New Section Container === */
+.new-section {
+  background-color: #fff0f7; /* Use the background color from your theme */
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Keeping the box shadow consistent */
+}
+
+/* === New Section Title === */
+.new-section h2 {
+  font-size: 32px;
+  color: #ff1f8e; /* Primary color from the theme */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* === New Section Text === */
+.new-section p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* === Button Styling === */
+.new-section .new-btn {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+  color: #fff0f7;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.new-section .new-btn:hover {
+  background: linear-gradient(to right, #ff1f8e 0%, #ffbd84 100%);
+}
+
+/* === Image Styling === */
+.new-section img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .new-section {
+    padding: 15px;
+  }
+
+  .new-section h2 {
+    font-size: 28px;
+  }
+
+  .new-section p {
+    font-size: 14px;
+  }
+
+  .new-section .new-btn {
+    padding: 10px 20px;
+  }
+}
+
+/* Job Notification Box Styling */
+.job-notification-box {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.job-notification-box h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.job-notification-box p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.job-notification-btn {
+  background: linear-gradient(to right, #ffbd84 0%, #ff1f8e 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.job-notification-btn:hover {
+  background: linear-gradient(to right, #ff1f8e 0%, #ffbd84 100%);
+  transform: translateY(-3px);
+}
+
+/* Horizontal Line Below Text */
+.job-notification-box hr {
+  width: 60px;
+  border: 1px solid #ff1f8e;
+  margin: 16px auto;
+}

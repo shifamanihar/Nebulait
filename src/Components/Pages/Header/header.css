@@ -1,3 +1,4 @@
+  /* Common reset */
 * {
   margin: 0;
   padding: 0;
@@ -11,15 +12,9 @@ a {
 
 .header {
   padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-}
-
-.header .images-wrapper {
-  width: 120px;
-  margin-right: 20px;
+  position: relative;
+  z-index: 100;
 }
 
 .header .images-wrapper img {
@@ -28,146 +23,146 @@ a {
   padding: 10px;
 }
 
-.header .search-box {
-  flex-grow: 1;
-  width: 480px;
-  margin-right: 20px;
+.search-box {
   position: relative;
+  width: 100%;
+  max-width: 430px;
 }
 
-.header .search-box span {
+.search-box span {
   position: absolute;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
-.header .search-box input {
+.search-box input {
   width: 100%;
   padding: 8px 40px;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.266);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .header nav {
   display: flex;
   align-items: center;
-  gap: 20px;
-  position: relative;
 }
 
 .header nav li {
-  font-size: 18px;
-  list-style: none;
   position: relative;
+  margin: 0 10px;
 }
 
 .header nav li button:hover {
   color: #f92c8b;
 }
 
-/* **Fixed Dropdown Position** */
-.header nav li .dropdown_menu {
-  position: absolute;  /* Keeps dropdown in a fixed spot */
-  top: 100%;           /* Positioned directly below the button */
-  left: 0;             /* Aligns it to the left of the button */
-  width: 950px;        /* Set dropdown width */
-  height: 400px;       /* Set dropdown height */
-  background-color: white;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  display: none;       /* Hidden initially */
-  margin-top: 5px;     /* Small gap between button and dropdown */
-  transition: all 0.2s ease-in-out;
+/* Updated Dropdown Styles */
+.dropdown_menu {
+  display: block;
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 950px;
+  height: 400px;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Ensure dropdown stays fixed when hovered */
-.header nav li:hover .dropdown_menu {
-  display: flex;       /* Show dropdown on hover */
+.dropdown_menu .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
 }
 
-/* Dropdown Internal Sections */
-.header nav li .dropdown_menu .left-box {
+.dropdown_menu .left-box {
   width: 20%;
-  border-right: 1px solid rgba(0, 0, 0, 0.267);
+  border-right: 1px solid #ccc;
+  padding: 15px;
 }
 
-.header nav li .dropdown_menu .left-box li {
-  padding: 10px 0;
+.dropdown_menu .left-box ul li {
+  padding: 10px;
+  cursor: pointer;
   text-align: center;
 }
 
-.header nav li .dropdown_menu .right-box {
+.dropdown_menu .right-box {
   width: 80%;
+  padding: 15px;
 }
 
-.header nav li .dropdown_menu .right-box .pro-box {
+.dropdown_menu .pro-box {
   width: 80%;
   height: 100px;
-  background-color: #ccedff;
+  background: #ccedff;
   margin-left: 6%;
-  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header nav li .dropdown_menu .right-box .course-detail-box {
+.course-detail-box {
   width: 80%;
-  margin: 20px 0 0 6%;
+  margin-left: 6%;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.header nav li .dropdown_menu .right-box .topic-list,
-.header nav li .dropdown_menu .right-box .material-list {
+.course-detail-box .topic-list,
+.course-detail-box .material-list {
   width: 45%;
 }
 
-.header nav li .dropdown_menu .right-box .topic-list p,
-.header nav li .dropdown_menu .right-box .material-list p {
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.text-color {
-  color: white !important;
+.course-detail-box p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .header .right-end-btn {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 10px;
 }
 
-.header .right-end-btn li {
+.right-end-btn li {
   list-style: none;
-  height: 48px;
-  line-height: 48px;
 }
 
-.header .right-end-btn li button {
+/* Phone and Pro Button */
+.right-end-btn .phone-btn,
+.right-end-btn .pro-btn {
   font-size: 15px;
-  background: linear-gradient(to right, #f92c8b 0%, #b02cd6 100%);
-  color: #ffffff;
+  background: linear-gradient(to right, #f92c8b, #b02cd6);
+  color: white;
   border-radius: 100px;
   padding: 10px 15px;
   border: none;
 }
 
-.phone-btn, .pro-btn {
-  font-size: 15px;
-  background: linear-gradient(to right, #f92c8b 0%, #b02cd6 100%);
-  color: #ffffff !important;
-  border-radius: 100px;
-  padding: 10px 15px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 48px;
-  min-height: 48px;
+.settings-btn {
+  width: 45px;              
+  height: 45px;              
+  background: linear-gradient(to right, #f92c8b, #b02cd6);   
+  border: none;              
+  border-radius: 25px !important;         
+  cursor: pointer;           
+  transition: all 0.3s ease; 
 }
 
-.header .right-end-btn {
-  margin-left: auto;
+.settings-btn:hover {
+  background: linear-gradient(to right, #b02cd6, #f92c8b); 
+  transform: scale(1.05);   
 }
+ 
