@@ -33,7 +33,7 @@ import JobNotificationPage from "./Components/Pages/JobNotificationPage/JobNotif
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header  variant="default"/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<div>Contact Page</div>} />

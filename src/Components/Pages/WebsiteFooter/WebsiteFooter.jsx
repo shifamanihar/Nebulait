@@ -1,7 +1,8 @@
 import React from 'react';
 import './WebsiteFooter.css';
+import { useLocation } from 'react-router-dom';
 
-const WebsiteFooter = () => {
+const WebsiteFooter = ({ variant = "default" }) => {
   const sections = {
     'Free Tutorials': [
       'Python 3 Tutorials', 'SQL Tutorials', 'R Tutorials', 'HTML Tutorials', 'CSS Tutorials',
@@ -26,33 +27,44 @@ const WebsiteFooter = () => {
     ]
   };
 
-  return (
-    <footer className="footer">
-      <div className="footer-container">
-        {Object.entries(sections).map(([title, links]) => (
-          <div className="footer-section" key={title}>
-            <h3 className="footer-title">{title}</h3>
-            <ul className="footer-links">
-              {links.map((link, i) => (
-                <li key={i}>
-                  <a href="#" className="footer-link">
-                    {link}
-                    {link === 'Learn HTML' && title === 'Paid Courses' && (
-                      <span className="free-badge">FREE</span>
-                    )}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+  const location = useLocation();
 
-      {/* Bottom Footer */}
-      <div className="bottom-footer">
-        <p>© 2025 YourCompanyName. All rights reserved.</p>
-      </div>
-    </footer>
+  const hideElement = ["/login"].includes(location.pathname);
+
+  return (
+
+    <>
+      {variant === "default" && !hideElement && (
+
+        <footer className="footer">
+          <div className="footer-container">
+            {Object.entries(sections).map(([title, links]) => (
+              <div className="footer-section" key={title}>
+                <h3 className="footer-title">{title}</h3>
+                <ul className="footer-links">
+                  {links.map((link, i) => (
+                    <li key={i}>
+                      <a href="#" className="footer-link">
+                        {link}
+                        {link === 'Learn HTML' && title === 'Paid Courses' && (
+                          <span className="free-badge">FREE</span>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="bottom-footer">
+            <p>© 2025 YourCompanyName. All rights reserved.</p>
+          </div>
+        </footer>
+      )}
+    
+    </>
   );
 };
 
