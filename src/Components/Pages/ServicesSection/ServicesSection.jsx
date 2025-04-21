@@ -57,7 +57,7 @@ export default function ServicesSection() {
       </div>
 
       <div className="cta-section">
-        <p>
+        <p className='mt-3'>
           Hire a <span className="bold">Dedicated Developer</span>
         </p>
         <button className="cta-button">Hire Now &gt;</button>

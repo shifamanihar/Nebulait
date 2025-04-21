@@ -1,10 +1,11 @@
  /* Job Notification Page Styling */
 .job-notification-page {
     padding: 40px 20px;
-    background: linear-gradient(135deg, #ffe1f0 30%, #d0e1ef 70%); /* Soft gradient for the background */
+    background:  #ffeef6 ;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     min-height: 100vh; /* Full height */
+    padding-top: 7%;
 }
 
 /* Job Notification Header Styling */

@@ -43,8 +43,8 @@ export default function InteractiveLearningSection() {
   return (
     <section className="interactive-learning-section">
       <p className="subtitle">INTERACTIVE LEARNING</p>
-      <h2 className="title">Overcome your fear of coding with Programiz PRO</h2>
-
+      <h2 className="title">Overcome your fear of coding with Nebula PRO</h2>
+      <br></br>
       <div className="interactive-container">
         <div className="left">
           {features.map((feature, index) => (
@@ -62,7 +62,7 @@ export default function InteractiveLearningSection() {
               )}
             </div>
           ))}
-          <button className="try-pro-button">Try Programiz PRO</button>
+          <button className="try-pro-button">Try Nebula PRO</button>
         </div>
 
         <div className="right">

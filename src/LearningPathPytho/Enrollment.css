@@ -16,6 +16,7 @@ body {
   display: flex;
   padding: 20px;
   gap: 30px;
+  padding-top: 7%;
 }
 
 /* === Sticky Enroll Box === */

@@ -5,6 +5,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+    padding-top: 7%;
   }
   
   @media (min-width: 768px) {

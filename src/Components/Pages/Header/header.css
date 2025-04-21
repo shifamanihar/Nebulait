@@ -13,8 +13,10 @@ a {
 .header {
   padding: 10px 0;
   width: 100%;
-  position: relative;
+  position: fixed ;
   z-index: 100;
+  background:white;
+  
 }
 
 .header .images-wrapper img {
