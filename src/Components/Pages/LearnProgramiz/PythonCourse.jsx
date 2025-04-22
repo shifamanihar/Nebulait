@@ -15,7 +15,7 @@ const PythonCourse = () => {
    
     <>
        <div className='course-container-wraper'>
-         <LanguageHeader/>
+         <LanguageHeader Course={courseName}/>
          
                <div className="container  my-5">
               <div className="p-4  d-flex justify-content-between bg-light rounded-3">
@@ -27,7 +27,7 @@ const PythonCourse = () => {
                     <small className="text-danger fw-semibold d-block">Recommended Course:</small>
                     <h2 className="fw-bold my-2">Master {courseName} Programming</h2>
                     <p className="mb-1 text-muted">Perfect for beginners serious about building a career in {courseName}.</p>
-                    <p className="mb-4 text-muted">Created by the Programiz team with over a decade of experience.</p>
+                    <p className="mb-4 text-muted">Created by the Nebula team with over a decade of experience.</p>
                     <button className="btn btn-primary px-4"
                     onClick={handleEnrollmentClick}>
                       Try Now <i className="fas fa-arrow-right ms-2"></i>

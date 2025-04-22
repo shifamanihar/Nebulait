@@ -45,8 +45,9 @@ export default function CourseList() {
   return (
     <div className="course-section">
       <h2 className="title">
-        Learn Nebula <span className="highlight">for Free</span>
+      👩🏻‍💻 Learn Nebula <span className="highlight">for Free</span>
       </h2>
+      <br></br>
       <p className="subtitle">
         Quick-read tutorials with code examples that you can run and copy—perfect for self-paced learning.
       </p>

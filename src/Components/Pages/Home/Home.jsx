@@ -12,6 +12,7 @@ import CurvedSection from '../CurvedSection/CurvedSection'; // ✅ Corrected imp
 import WhyNebula from '../WhyNebula/WhyNebula';
 import AboutAgencyPage from '../AboutPage/AboutPage';
 import LearnOnTheGo from '../LearnOnTheGo/LearnOnTheGo';
+import Examples from '../TutorialHome/Examples';
 
 export default function Home() {
   return (
@@ -50,6 +51,9 @@ export default function Home() {
 
       {/* ✅ Practice with Compilers */}
       <OnlineCompilers />
+
+      {/* ✅ Practice with Examples*/}
+      <Examples />
 
       {/* ✅ Why Nebula */}
       <WhyNebula />

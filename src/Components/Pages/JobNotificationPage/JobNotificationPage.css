@@ -1,44 +1,41 @@
  /* Job Notification Page Styling */
-.job-notification-page {
+ .job-notification-page {
     padding: 40px 20px;
-    background:  #ffeef6 ;
+    background: #f3faff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-    min-height: 100vh; /* Full height */
+    min-height: 100vh;
     padding-top: 7%;
-}
-
-/* Job Notification Header Styling */
-.job-notification-header {
+  }
+  
+  .job-notification-header {
     text-align: center;
     padding: 30px;
     background-color: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
-    border: 3px solid #e24aa0; /* Neon pink border */
-}
-
-.job-notification-header h2 {
+    border: 3px solid #e24aa0;
+  }
+  
+  .job-notification-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #e24aa0; /* Neon pink text */
+    color: #e24aa0;
     margin-bottom: 15px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 4px 6px rgba(226, 74, 160, 0.25); /* Light glow effect */
-}
-
-/* Tab container styling */
-.job-notification-tabs {
+    text-shadow: 0 4px 6px rgba(226, 74, 160, 0.25);
+  }
+  
+  .job-notification-tabs {
     display: flex;
     justify-content: center;
     gap: 25px;
     margin-top: 20px;
-}
-
-/* Reusing the button styles from the language header */
-.job-notification-tabs button {
+  }
+  
+  .job-notification-tabs button {
     padding: 16px 20px;
     background: white;
     border: 2px solid #e24aa0;
@@ -51,39 +48,39 @@
     align-items: center;
     justify-content: center;
     min-width: 180px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
-}
-
-/* Hover effect for tab buttons */
-.job-notification-tabs button:hover,
-.job-notification-tabs button:active {
+  }
+  
+  .job-notification-tabs button:hover,
+  .job-notification-tabs button:active {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     background-color: #fff0f7;
     color: #e24aa0;
     border-color: #e24aa0;
-}
-
-/* Active tab look */
-.job-notification-tabs .active-tab {
+  }
+  
+  .job-notification-tabs .active-tab {
     background-color: #fff0f7;
     color: #e24aa0;
     border-color: #e24aa0;
-}
-
-/* Focus effect for buttons */
-.job-notification-tabs button:focus {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-notification-tabs button:focus {
     outline: none;
-    box-shadow: 0 0 8px rgba(226, 74, 160, 0.6); /* Softer neon focus effect */
-}
-
-/* Content section styling */
-.job-content {
+    box-shadow: 0 0 8px rgba(226, 74, 160, 0.6);
+  }
+  
+  .job-content {
     text-align: center;
     padding: 30px;
     font-size: 1.1rem;
     color: #333;
     line-height: 1.6;
-}
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  

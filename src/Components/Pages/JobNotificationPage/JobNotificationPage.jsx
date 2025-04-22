@@ -10,7 +10,7 @@ export default function JobNotificationPage() {
     <div className="job-notification-page">
       {/* Job Notification Header */}
       <div className="job-notification-header">
-        <h2>Job Notifications</h2>
+        <h2>Job Notifications 💼  📊 </h2>
         <div className="job-notification-tabs">
           {tabs.map((tab) => (
             <button

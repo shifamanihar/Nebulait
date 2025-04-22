@@ -1,50 +1,70 @@
 .sidebar {
-    width: 300px;
-    padding: 10px;
-    border-radius: 10px;
-    padding-top: 7%;
-  }
-  
-  .menu-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  }
-  
-  .menu-card:hover {
-    background-color: #f3f4f6;
-  }
-  
-  .menu-title {
-    padding: 15px 20px;
-    font-weight: 600;
-    color: #1f2937;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .arrow {
-    font-size: 14px;
-    color: #6b7280;
-  }
-  
-  .submenu {
-    padding: 0 20px 10px 20px;
-  }
-  
-  .submenu-item {
-    padding: 8px 0;
-    font-size: 14px;
-    color: #374151;
-    border-bottom: 1px solid #f1f1f1;
-  }
-  
-  .submenu-item:last-child {
-    border-bottom: none;
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0fbff 0%, #eef8ff 100%);
+  padding: 20px;
+  min-height: 100vh;
+  width: 250px;
+  border-right: 2px solid #f3b5d2;
+  padding-top: 7px;
+}
+
+.menu-card {
+  background: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-card:hover {
+  background: linear-gradient(to right, #ffcbf2, #fda4cf);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card.expanded {
+  background: linear-gradient(to right, #ffe0f7, #ffd6eb);
+  box-shadow: 0 6px 18px rgba(255, 31, 142, 0.3);
+}
+
+.menu-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #032470;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  color: #032470;
+}
+
+.submenu {
+  padding: 10px 0;
+  margin-top: 12px;
+}
+
+.submenu-item {
+  font-size: 1rem;
+  color: #6d6b74;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submenu-item:hover {
+  background: #f0f1f6;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.submenu-item:last-child {
+  margin-bottom: 0;
+}
