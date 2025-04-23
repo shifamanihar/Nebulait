@@ -33,6 +33,7 @@
     width: 260px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
+    border: 3px solid #fd8ec5;
   }
   
   .service-card img {
@@ -100,4 +101,14 @@
   .cta-button:hover {
     transform: scale(1.05);
   }
+  
+   .service-card:hover, .service-card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff0f7;
+    color: #e24aa0;
+    border-color: #e24aa0;
+  }
+  
+  
   

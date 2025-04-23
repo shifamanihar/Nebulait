@@ -9,11 +9,16 @@ export default function LanguageHeader({Course}) {
   const tabs = [
     { label: 'TUTORIALS', path: '/python-course' },
     { label: 'COURSES', path: '/python-course' },
-    { label: 'EXAMPLES', path: '/examples' },
+    { label: 'EXAMPLES', path: '/examples' }, 
     { label: 'REFERENCES', path: '/course-list' },
     { label: 'ONLINE COMPILER', path: '/online-compiler' },
   ];
+const courseName =  localStorage.getItem("selectedCourse");
 
+const handleCourseClick = (courseName , path) => {
+  localStorage.setItem("selectedCourse", courseName);
+   navigate(`${path}/${courseName}`);
+};
   return (
     <div className="language-header">
       <h2>Learn {Course} programming</h2>
@@ -22,8 +27,7 @@ export default function LanguageHeader({Course}) {
           <button
             key={tab.label}
             className={location.pathname === tab.path ? 'active-tab' : ''}
-            onClick={() => navigate(tab.path)}
-          >
+            onClick={() => handleCourseClick(courseName, tab.path)}          >
             {tab.label}
           </button>
         ))}

@@ -84,7 +84,7 @@ function App() {
 
         {/* Examples Pages Routing */}
         <Route path="/tutorial/Ruby/RubyExamples" element={<RubyExamples />} />
-        <Route path="/tutorial/Python/PythonExamples" element={<PythonExamples />} />
+        <Route path="/examples/:courseName" element={<PythonExamples />} />
         <Route path="/tutorial/JavaScript/JavaScriptExamples" element={<JavaScriptExamples />} />
         <Route path="/tutorial/Java/JavaExamples" element={<JavaExamples />} />
         <Route path="/tutorial/HTML/HTMLExamples" element={<HTMLExamples />} />
