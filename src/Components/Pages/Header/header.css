@@ -1,4 +1,4 @@
-  /* Common reset */
+ /* Common reset */
 * {
   margin: 0;
   padding: 0;
@@ -153,18 +153,81 @@ a {
   border: none;
 }
 
-.settings-btn {
-  width: 45px;              
-  height: 45px;              
-  background: linear-gradient(to right, #f92c8b, #b02cd6);   
-  border: none;              
-  border-radius: 25px !important;         
-  cursor: pointer;           
-  transition: all 0.3s ease; 
+
+.profile-dropdown {
+  position: relative;
+  /* display: inline-block; */
 }
 
-.settings-btn:hover {
-  background: linear-gradient(to right, #b02cd6, #f92c8b); 
-  transform: scale(1.05);   
+.profile-btn {
+  background-color:transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
 }
- 
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 103%;
+  right: -5%;
+  background-color:  #ffffff;
+  color: #2a0606;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: auto;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+}
+
+.user-info .email{
+  color: #858585;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.user-info .email:hover{
+  color: white;
+}
+
+
+.user-img {
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dropdown-item {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #9f9f9f;
+  font-size: 14px;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color:white; 
+ background-color: transparent;
+}

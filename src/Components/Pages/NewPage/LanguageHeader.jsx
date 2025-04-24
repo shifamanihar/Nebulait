@@ -11,7 +11,7 @@ export default function LanguageHeader({Course}) {
     { label: 'COURSES', path: '/python-course' },
     { label: 'EXAMPLES', path: '/examples' }, 
     { label: 'REFERENCES', path: '/course-list' },
-    { label: 'ONLINE COMPILER', path: '/online-compiler' },
+    { label: 'ONLINE COMPILER', path: '/compiler' },
   ];
 const courseName =  localStorage.getItem("selectedCourse");
 

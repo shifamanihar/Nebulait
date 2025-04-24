@@ -1,51 +1,51 @@
 .sidebar {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f0fbff 0%, #eef8ff 100%);
+  width: 350px;
   padding: 20px;
-  min-height: 100vh;
-  width: 250px;
-  border-right: 2px solid #f3b5d2;
-  padding-top: 7px;
+  border-radius: 16px;
+ 
+  box-shadow: 0 8px 24px rgba(255, 182, 193, 0.3);
+ 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .menu-card {
-  background: rgba(255, 255, 255, 0.85);
-  margin-bottom: 16px;
+  background: #fff0f7;
+  border: 1px solid #f8c5d2;
+  border-left: 7px solid #f687bd;
   border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.2);
 }
 
 .menu-card:hover {
-  background: linear-gradient(to right, #ffcbf2, #fda4cf);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.menu-card.expanded {
-  background: linear-gradient(to right, #ffe0f7, #ffd6eb);
-  box-shadow: 0 6px 18px rgba(255, 31, 142, 0.3);
+  background-color: #ffc1cc;
+  transform: translateY(-2px);
 }
 
 .menu-title {
-  font-size: 1.25rem;
+  padding: 18px 24px;
   font-weight: 600;
-  color: #032470;
+  color: #111827;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 16px;
 }
 
 .arrow {
-  font-size: 1.2rem;
-  color: #032470;
+  font-size: 16px;
+  color: #6b7280;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover .arrow {
+  transform: rotate(90deg);
 }
 
 .submenu {
-  padding: 10px 0;
-  margin-top: 12px;
+  padding: 0 24px 12px 24px;
 }
 
 .submenu-item {

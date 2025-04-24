@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useRef , useEffect} from 'react';
 import './header.css';
 import logo from "../../Images/Logo/neblogow.png";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -8,8 +8,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CloseIcon from '@mui/icons-material/Close';
+import profile from "../../Images/profile-icon.jpg"
+import { WidthFull } from '@mui/icons-material';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 
-export default function Header({ variant = "default" }) {
+
+export default function Header({ variant = "default" }) {
     const [openDropdown, setOpenDropdown] = useState(null);
     const navigate = useNavigate();
 
@@ -27,6 +32,11 @@ export default function Header({ variant = "default" }) {
         navigate("/login");
     };
 
+    const [menuOpen, setMenuOpen] = useState(false);
+    const handleClickAway = () => {
+        setMenuOpen(false);
+    };
+    
     const Dropmenu = () => (
         <div className="dropdown_menu d-flex">
             <span className="close-btn" onClick={closeDropdown}>
@@ -64,12 +74,16 @@ export default function Header({ variant = "default" }) {
             </div>
         </div>
     );
-
-    return ( 
+    
+    const employee ={
+        name : "Shubham Musale",
+        email : "shubhammusale111@gmail.com",
+    }
+    return (
         <div>
-            {variant === "default" && !hideElement&&(
-            <div className='header d-flex justify-content-around align-items-center container-fluid'>
-            
+            {variant === "default" && !hideElement && (
+                <div className='header d-flex justify-content-around align-items-center container-fluid'>
+
                     <div className="images-wrapper ">
                         <img src={logo} alt="Logo" />
                     </div>
@@ -107,17 +121,57 @@ export default function Header({ variant = "default" }) {
                             </Button>
                         </li>
                         <li className='list-inline-item ms-1'>
-                            <Button className='settings-btn'>
-                                <SettingsIcon sx={{ color: 'white' }} />
-                            </Button>
+                        <ClickAwayListener onClickAway={handleClickAway}>
+                    <div className="profile-dropdown">      
+                        <button className="profile-btn" onClick={() => setMenuOpen(!menuOpen)}>
+                        <img
+                            src={profile}
+                            alt="User"
+                            className="profile-img mt-1"
+                        />
+                        
+                        </button>
+
+                        {menuOpen && (
+                        <div className="dropdown-menu show">
+                            <div className="user-info">
+                        
+                            <img src={profile}  className="user-img" alt="profile pic"/>
+                            <div>
+                                <h6 className="mb-0">{employee.name}</h6>
+                                <p className="email mb-0">{employee.email}</p>
+                            </div>
+                            </div>
+
+                            <button className="dropdown-item">
+                                 Dashboard
+                            </button>
+                            <button className="dropdown-item">
+                                My Learning
+                            </button>
+                            <button className="dropdown-item">
+                                 Whish List
+                            </button>
+                            <button
+                                className="dropdown-item"
+                                onClick={() => {
+                                localStorage.clear(); 
+                                navigate("/"); 
+                                }}
+                                >
+                                <ExitToAppOutlinedIcon className="me-2" /> Logout
+                            </button>
+                        </div>
+                        )}
+                    </div>
+                </ClickAwayListener>
                         </li>
                     </ul>
-            
-                {/* Render Dropdown Only Once */}
-                {openDropdown && <Dropmenu />}
-            </div>
+
+                    {/* Render Dropdown Only Once */}
+                    {openDropdown && <Dropmenu />}
+                </div>
             )}
         </div>
     );
 }
-

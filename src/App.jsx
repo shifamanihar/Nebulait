@@ -45,6 +45,8 @@ import SwiftExamples from './Components/Pages/TutorialHome/Swift/SwiftExamples';
 import RustExamples from './Components/Pages/TutorialHome/Rust/RustExamples';
 import DSAExamples from './Components/Pages/TutorialHome/DSA/DSAExamples';
 
+//dashboard
+import LearningDashboard from './Components/Pages/LearningDashboard/LearningDashboard';
 
 function App() {
   return (
@@ -62,19 +64,19 @@ function App() {
         <Route path="/job-notification" element={<JobNotificationPage />} />
 
         {/* Online Compilers */}
-        <Route path="/compiler/python" element={<PythonCompiler />} />
-        <Route path="/compiler/r" element={<RCompiler />} />
-        <Route path="/compiler/sql" element={<SQLEditor />} />
-        <Route path="/compiler/htmlcss" element={<HTMLCSSEditor />} />
-        <Route path="/compiler/javascript" element={<JavaScriptCompiler />} />
-        <Route path="/compiler/java" element={<JavaCompiler />} />
-        <Route path="/compiler/c" element={<CCompiler />} />
-        <Route path="/compiler/cpp" element={<CppCompiler />} />
-        <Route path="/compiler/csharp" element={<CSharpCompiler />} />
-        <Route path="/compiler/go" element={<GoCompiler />} />
-        <Route path="/compiler/php" element={<PHPCompiler />} />
-        <Route path="/compiler/swift" element={<SwiftCompiler />} />
-        <Route path="/compiler/rust" element={<RustCompiler />} />
+        <Route path="/compiler/:courseName" element={<PythonCompiler />} />
+        <Route path="/compiler/:courseName" element={<RCompiler />} />
+        <Route path="/compiler/:courseName" element={<SQLEditor />} />
+        <Route path="/compiler/:courseName" element={<HTMLCSSEditor />} />
+        <Route path="/compiler/:courseName" element={<JavaScriptCompiler />} />
+        <Route path="/compiler/:courseName" element={<JavaCompiler />} />
+        <Route path="/compiler/:courseName" element={<CCompiler />} />
+        <Route path="/compiler/:courseName" element={<CppCompiler />} />
+        <Route path="/compiler/:courseName" element={<CSharpCompiler />} />
+        <Route path="/compiler/:courseName" element={<GoCompiler />} />
+        <Route path="/compiler/:courseName" element={<PHPCompiler />} />
+        <Route path="/compiler/:courseName" element={<SwiftCompiler />} />
+        <Route path="/compiler/:courseName" element={<RustCompiler />} />
 
         {/* LanguageHeader Tabs */}
         <Route path="/python-course" element={<PythonCourse />} />
@@ -96,7 +98,7 @@ function App() {
         <Route path="/tutorial/Swift/SwiftExamples" element={<SwiftExamples />} />
         <Route path="/tutorial/Rust/RustExamples" element={<RustExamples />} />
         <Route path="/tutorial/DSA/DSAExamples" element={<DSAExamples />} />
-
+        <Route path="/dashboard" element={<LearningDashboard />} />
       </Routes>
       <WebsiteFooter />
     </BrowserRouter>
