@@ -1,14 +1,13 @@
 import React from 'react';
 import './home.css';
-import bgimg from '../../Images/Background/banner-shap-2.png';
 import { Button } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ServicesSection from '../ServicesSection/ServicesSection';
 import InteractiveLearningSection from '../InteractiveLearningSection/InteractiveLearningSection';
 import { Link } from 'react-router-dom';
 import OnlineCompilers from '../OnlineCompilers/OnlineCompilers';
-import CourseList from '../LearnProgramiz/CourseList'; // ✅ Course List
-import CurvedSection from '../CurvedSection/CurvedSection'; // ✅ Corrected import path
+import CourseList from '../LearnProgramiz/CourseList';
+import CurvedSection from '../CurvedSection/CurvedSection';
 import WhyNebula from '../WhyNebula/WhyNebula';
 import AboutAgencyPage from '../AboutPage/AboutPage';
 import LearnOnTheGo from '../LearnOnTheGo/LearnOnTheGo';
@@ -19,7 +18,7 @@ export default function Home() {
     <div className="container-fluid homepage">
       {/* ✅ Hero Section */}
       <div className="hero-section">
-        <div className="content-box">
+        <div className="content-box-home">
           <h1>
             Creative Web <br />
             Development <br />
@@ -34,16 +33,12 @@ export default function Home() {
             <span className="circle"></span>
           </Button>
         </div>
-
-        <div className="image-box">
-          <img src={bgimg} alt="Hero" className="hero-image" />
-        </div>
       </div>
 
-      {/* ✅ Course List Section */}
+      {/* ✅ Course List */}
       <CourseList />
 
-      {/* ✅ CurvedSection Added */}
+      {/* ✅ Curved Section */}
       <CurvedSection />
 
       {/* ✅ Interactive Learning */}
@@ -52,7 +47,7 @@ export default function Home() {
       {/* ✅ Practice with Compilers */}
       <OnlineCompilers />
 
-      {/* ✅ Practice with Examples*/}
+      {/* ✅ Examples */}
       <Examples />
 
       {/* ✅ Why Nebula */}
@@ -61,7 +56,7 @@ export default function Home() {
       {/* ✅ About Page */}
       <AboutAgencyPage />
 
-      {/* ✅ Services */}
+      {/* ✅ Services Section */}
       <ServicesSection />
 
       {/* ✅ Learn On The Go */}
@@ -69,4 +64,3 @@ export default function Home() {
     </div>
   );
 }
-

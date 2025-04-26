@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter , Routes, Route } from "react-router-dom";
+
 
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
@@ -46,7 +47,9 @@ import RustExamples from './Components/Pages/TutorialHome/Rust/RustExamples';
 import DSAExamples from './Components/Pages/TutorialHome/DSA/DSAExamples';
 
 //dashboard
-import LearningDashboard from './Components/Pages/LearningDashboard/LearningDashboard';
+import LearningDashboard from "./Components/Pages/LearningDashboard/LearningDashboard";
+import ContactPage from './Components/Pages/ContactPage/ContactPage';
+
 
 function App() {
   return (
@@ -54,7 +57,7 @@ function App() {
       <Header variant="default" />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<div>Contact Page</div>} />
+        <Route path="/contact" element={<ContactPage/>} />
         <Route path="/course/:courseName" element={<PythonCourse />} />
         <Route path="/compilers" element={<OnlineCompilers />} />
         <Route path="/login" element={<Login />} />
@@ -98,7 +101,8 @@ function App() {
         <Route path="/tutorial/Swift/SwiftExamples" element={<SwiftExamples />} />
         <Route path="/tutorial/Rust/RustExamples" element={<RustExamples />} />
         <Route path="/tutorial/DSA/DSAExamples" element={<DSAExamples />} />
-        <Route path="/dashboard" element={<LearningDashboard />} />
+        <Route path="/learning-dashboard" element={<LearningDashboard />} />
+
       </Routes>
       <WebsiteFooter />
     </BrowserRouter>

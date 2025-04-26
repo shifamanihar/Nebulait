@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./LearningDashboard.css";
 
 const tabs = [
@@ -10,7 +11,23 @@ const tabs = [
 ];
 
 const LearningDashboard = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("all");
+
+  // Sync tab from URL on mount and when URL changes
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const section = params.get("section");
+    if (section && tabs.some((tab) => tab.key === section)) {
+      setActiveTab(section);
+    }
+  }, [location]);
+
+  const handleTabClick = (tabKey) => {
+    setActiveTab(tabKey);
+    navigate(`/learning-dashboard?section=${tabKey}`);
+  };
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -57,12 +74,14 @@ const LearningDashboard = () => {
   return (
     <div className="learning-dashboard">
       <header className="dashboard-header">
-        <div className="logo"> <h1>📚 My Learning</h1></div>
+        <div className="logo">
+          <h1>📚 My Learning</h1>
+        </div>
         <nav className="nav-tabs">
           {tabs.map((tab) => (
             <button
               key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
+              onClick={() => handleTabClick(tab.key)}
               className={`tab-btn ${activeTab === tab.key ? "active" : ""}`}
             >
               {tab.label}
