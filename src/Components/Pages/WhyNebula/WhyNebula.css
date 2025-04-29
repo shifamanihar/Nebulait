@@ -52,3 +52,108 @@
     color: #555;
     line-height: 1.6;
   }
+
+  /* Mobile Devices */
+@media (max-width: 768px) {
+  .why-programiz-section {
+    padding: 40px 15px; /* Reduced padding for mobile */
+  }
+
+  .section-title {
+    font-size: 24px; /* Smaller font size for the title */
+    margin-bottom: 20px; /* Reduced margin */
+  }
+
+  .cards-container {
+    flex-direction: column; /* Stack the cards vertically on small screens */
+    align-items: center; /* Center align the cards */
+    gap: 30px; /* Reduced gap between cards */
+  }
+
+  .card {
+    flex: 1 1 100%; /* Make each card take full width on mobile */
+    max-width: 100%; /* Ensure cards don't exceed container width */
+    padding: 15px; /* Reduced padding for mobile */
+  }
+
+  .icon {
+    font-size: 24px; /* Smaller icon size */
+  }
+
+  .card h4 {
+    font-size: 16px; /* Smaller heading size for mobile */
+  }
+
+  .card p {
+    font-size: 14px; /* Smaller paragraph text */
+  }
+}
+
+/* Tablet Devices */
+@media (max-width: 1024px) {
+  .why-programiz-section {
+    padding: 50px 20px; /* Reduced padding for tablets */
+  }
+
+  .section-title {
+    font-size: 28px; /* Slightly smaller font size for tablets */
+    margin-bottom: 30px; /* Reduced margin */
+  }
+
+  .cards-container {
+    flex-direction: row; /* Keep cards in a row for tablets */
+    justify-content: space-around; /* Space the cards out evenly */
+  }
+
+  .card {
+    flex: 1 1 45%; /* Cards take 45% of the width */
+    max-width: 45%; /* Cards won't exceed 45% of the width */
+  }
+
+  .icon {
+    font-size: 26px; /* Slightly smaller icon size for tablet */
+  }
+
+  .card h4 {
+    font-size: 17px; /* Slightly smaller heading for tablet */
+  }
+
+  .card p {
+    font-size: 15px; /* Adjust paragraph font size for tablets */
+  }
+}
+
+/* Desktop Devices */
+@media (min-width: 1025px) {
+  .why-programiz-section {
+    padding: 60px 20px; /* Original padding for larger screens */
+  }
+
+  .section-title {
+    font-size: 32px; /* Original title font size */
+    margin-bottom: 40px; /* Original margin */
+  }
+
+  .cards-container {
+    flex-wrap: wrap; /* Keep wrapping cards on large screens */
+    gap: 40px; /* Original gap between cards */
+  }
+
+  .card {
+    flex: 1 1 280px; /* Keep the card width responsive */
+    max-width: 320px; /* Max card width */
+    padding: 20px; /* Original padding for the cards */
+  }
+
+  .icon {
+    font-size: 28px; /* Original icon size */
+  }
+
+  .card h4 {
+    font-size: 18px; /* Original heading font size */
+  }
+
+  .card p {
+    font-size: 15px; /* Original paragraph font size */
+  }
+}

@@ -1,6 +1,7 @@
+ /* Base styles for the course section */
 .course-section {
   padding: 60px 20px;
-  background:  #f3faff; /* light pinkish-white background */
+  background: #f3faff; /* light pinkish-white background */
   text-align: center;
   font-family: 'Inter', sans-serif;
   color: #2d2d2d; /* dark text */
@@ -71,3 +72,98 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+  .course-section {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .course-button-container {
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .course-btn {
+    font-size: 14px;
+    min-width: 170px;
+    padding: 12px 20px;
+  }
+
+  .course-icon {
+    font-size: 18px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .course-section {
+    padding: 30px 15px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .course-button-container {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .course-btn {
+    font-size: 14px;
+    min-width: 150px;
+    padding: 10px 18px;
+  }
+
+  .course-icon {
+    font-size: 16px;
+  }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  .course-section {
+    padding: 20px 10px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .course-button-container {
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-btn {
+    font-size: 12px;
+    min-width: 140px;
+    padding: 8px 15px;
+  }
+
+  .course-icon {
+    font-size: 14px;
+  }
+}

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./LearningDashboard.css";
 
+// Sample course object
+const course = { id: "python-course", title: "Learn Python", price: 3000 };
+
 const tabs = [
   { key: "all", label: "All Courses" },
   { key: "lists", label: "My Lists" },
@@ -14,19 +17,64 @@ const LearningDashboard = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("all");
+  const [wishlist, setWishlist] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  // Sync tab from URL on mount and when URL changes
+  const loadWishlistCart = () => {
+    const storedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setWishlist(storedWishlist);
+    setCart(storedCart);
+  };
+
+  useEffect(() => {
+    loadWishlistCart();
+  }, []);
+
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === "wishlist" || e.key === "cart") {
+        loadWishlistCart();
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const section = params.get("section");
     if (section && tabs.some((tab) => tab.key === section)) {
       setActiveTab(section);
+    } else {
+      setActiveTab("all");
     }
   }, [location]);
 
   const handleTabClick = (tabKey) => {
     setActiveTab(tabKey);
     navigate(`/learning-dashboard?section=${tabKey}`);
+    loadWishlistCart();
+  };
+
+  // 👇 Wishlist mein course add karne ka function
+  const handleAddToWishlist = () => {
+    const currentWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const updatedWishlist = [...currentWishlist, course];
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    setWishlist(updatedWishlist); // Immediately update UI
+  };
+
+  // 👇 Cart mein course add karne ka function
+  const handleAddToCart = () => {
+    const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedCart = [...currentCart, course];
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCart(updatedCart); // Immediately update UI
   };
 
   const renderTabContent = () => {
@@ -36,6 +84,7 @@ const LearningDashboard = () => {
           <div>
             <h2 className="tab-title">All Courses</h2>
             <p className="tab-desc">Explore your available courses here.</p>
+          
           </div>
         );
       case "lists":
@@ -49,7 +98,17 @@ const LearningDashboard = () => {
         return (
           <div>
             <h2 className="tab-title">Wishlist</h2>
-            <p className="tab-desc">Courses you've added to your wishlist.</p>
+            {wishlist.length > 0 ? (
+              <ul className="course-list">
+                {wishlist.map((course, index) => (
+                  <li key={index} className="course-item">
+                    <strong>{course.title}</strong> - ₹{course.price}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="tab-desc">Your wishlist is empty.</p>
+            )}
           </div>
         );
       case "dashboard":
@@ -63,7 +122,17 @@ const LearningDashboard = () => {
         return (
           <div>
             <h2 className="tab-title">Your Cart</h2>
-            <p className="tab-desc">Manage your selected courses.</p>
+            {cart.length > 0 ? (
+              <ul className="course-list">
+                {cart.map((course, index) => (
+                  <li key={index} className="course-item">
+                    <strong>{course.title}</strong> - ₹{course.price}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="tab-desc">Your cart is empty.</p>
+            )}
           </div>
         );
       default:

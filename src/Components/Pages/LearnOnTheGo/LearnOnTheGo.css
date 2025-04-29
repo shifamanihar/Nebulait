@@ -1,70 +1,213 @@
+ /* Base styles for app download container */
 .app-download-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 4rem;
-    gap: 3rem;
-    flex-wrap: wrap;
-    margin: 50px;
-    background-color:#f3faff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 50px;
+  background-color: #f3faff;
+}
+
+.app-download-left {
+  max-width: 400px;
+}
+
+.app-download-left h2 {
+  font-size: 28px;
+  color: #1a202c;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.app-download-left p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.app-download-badges img {
+  height: 45px;
+  margin-right: 1rem;
+}
+
+.app-download-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.app-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  width: 180px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-card h4 {
+  font-size: 16px;
+  color: #1e1e8f;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-card a {
+  color: #0066ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.card-icon {
+  font-size: 28px;
+  color: #1a202c;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+  .app-download-container {
+    padding: 3rem 2rem;
+    gap: 2rem;
   }
-  
+
   .app-download-left {
-    max-width: 400px;
+    max-width: 350px;
   }
-  
+
   .app-download-left h2 {
-    font-size: 28px;
-    color: #1a202c;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 24px;
   }
-  
+
   .app-download-left p {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .app-download-badges img {
-    height: 45px;
-    margin-right: 1rem;
-  }
-  
-  .app-download-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  .app-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 1.5rem;
-    width: 180px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .app-card h4 {
-    font-size: 16px;
-    color: #1e1e8f;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .app-card a {
-    color: #0066ff;
-    text-decoration: none;
     font-size: 14px;
   }
-  
-  .card-icon {
-    font-size: 28px;
-    color: #1a202c;
+
+  .app-download-cards {
+    gap: 1.2rem;
   }
-  
-  
+
+  .app-card {
+    width: 150px;
+    padding: 1rem;
+  }
+
+  .app-card h4 {
+    font-size: 14px;
+  }
+
+  .app-card a {
+    font-size: 12px;
+  }
+
+  .card-icon {
+    font-size: 24px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .app-download-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .app-download-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .app-download-left h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .app-download-left p {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .app-download-badges {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .app-download-cards {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .app-card {
+    width: 150px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .app-card h4 {
+    font-size: 14px;
+  }
+
+  .app-card a {
+    font-size: 12px;
+  }
+
+  .card-icon {
+    font-size: 24px;
+  }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  .app-download-container {
+    padding: 1.5rem;
+  }
+
+  .app-download-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .app-download-left h2 {
+    font-size: 20px;
+  }
+
+  .app-download-left p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .app-download-badges img {
+    height: 40px;
+  }
+
+  .app-download-cards {
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .app-card {
+    width: 130px;
+    padding: 0.8rem;
+  }
+
+  .app-card h4 {
+    font-size: 13px;
+  }
+
+  .app-card a {
+    font-size: 11px;
+  }
+
+  .card-icon {
+    font-size: 20px;
+  }
+}

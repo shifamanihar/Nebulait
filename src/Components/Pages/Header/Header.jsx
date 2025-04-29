@@ -37,15 +37,13 @@ export default function Header({ variant = "default" }) {
         email: "shubhammusale111@gmail.com",
     };
 
-    // Navigate to LearningDashboard with section param
     const handleDashboardClick = (section) => {
         navigate(`/learning-dashboard?section=${section}`);
         setMenuOpen(false);
     };
 
-    // Function to navigate to "All Courses"
     const handleLogoClick = () => {
-        navigate("/all-courses"); // Adjust this to the correct route for "All Courses"
+        navigate("/all-courses");
     };
 
     const Dropmenu = () => (
@@ -90,7 +88,6 @@ export default function Header({ variant = "default" }) {
         <div>
             {variant === "default" && !hideElement && (
                 <div className='header d-flex justify-content-around align-items-center container-fluid'>
-
                     <div className="images-wrapper" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                         <img src={logo} alt="Logo" />
                     </div>

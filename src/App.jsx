@@ -49,6 +49,7 @@ import DSAExamples from './Components/Pages/TutorialHome/DSA/DSAExamples';
 //dashboard
 import LearningDashboard from "./Components/Pages/LearningDashboard/LearningDashboard";
 import ContactPage from './Components/Pages/ContactPage/ContactPage';
+import BuyNowPage from './Components/Pages/BuyNow/BuyNow';
 
 
 function App() {
@@ -102,6 +103,7 @@ function App() {
         <Route path="/tutorial/Rust/RustExamples" element={<RustExamples />} />
         <Route path="/tutorial/DSA/DSAExamples" element={<DSAExamples />} />
         <Route path="/learning-dashboard" element={<LearningDashboard />} />
+        <Route path="/buy-now" element={<BuyNowPage />} />
 
       </Routes>
       <WebsiteFooter />

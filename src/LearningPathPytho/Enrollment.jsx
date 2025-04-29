@@ -1,20 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Enrollment.css";
 import certificateImg from "./images/certificate.png";
-import { useNavigate } from "react-router-dom";
 
 const Enrollment = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [enrolled, setEnrolled] = useState(false);
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  const [isInCart, setIsInCart] = useState(false);
   const navigate = useNavigate();
-
-  const handleEnrollClick = () => {
-    setEnrolled(true);
-    setTimeout(() => {
-      setEnrolled(false);
-      navigate("/login");
-    }, 1000);
-  };
 
   const togglePopup = () => {
     setShowPopup((prev) => !prev);
@@ -28,12 +21,62 @@ const Enrollment = () => {
     navigate("/job-notification");
   };
 
+  const handleWishlistClick = () => {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const course = { id: "python-course", name: "Learn Python" };
+
+    const courseIndex = wishlist.findIndex((item) => item.id === course.id);
+
+    if (courseIndex === -1) {
+      wishlist.push(course);
+      setIsWishlisted(true);
+      alert("❤️ Added to your Wishlist!");
+    } else {
+      wishlist.splice(courseIndex, 1);
+      setIsWishlisted(false);
+      alert("💔 Removed from your Wishlist!");
+    }
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  };
+
+  const handleAddToCart = () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const course = { id: "python-course", name: "Learn Python" };
+
+    const courseIndex = cart.findIndex((item) => item.id === course.id);
+
+    if (courseIndex === -1) {
+      cart.push(course);
+      setIsInCart(true);
+      alert("Added to Cart!");
+    } else {
+      cart.splice(courseIndex, 1);
+      setIsInCart(false);
+      alert("Removed from Cart!");
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
+  const handleBuyNow = () => {
+    navigate("/buy-now"); // Buy Now button yahan se BuyNow.jsx page par le jaayega
+  };
+
   const courseTitles = [
     "Learn Python Basics",
     "Practice: Python Basics",
     "Learn Python Intermediate",
     "Practice: Python Intermediate",
     "Build Final Project"
+  ];
+
+  const courseDescriptions = [
+    "Master the basic concepts of Python programming.",
+    "Practice real coding problems on basics.",
+    "Dive deeper into intermediate Python topics.",
+    "Sharpen your skills with intermediate challenges.",
+    "Apply your learning by building a final project."
   ];
 
   const projects = [
@@ -53,24 +96,33 @@ const Enrollment = () => {
 
   return (
     <div className="enrollment-page">
-      {/* === Sticky Right Sidebar === */}
+      {/* Sticky Sidebar */}
       <aside className="sticky-enroll">
         <div className="course-right">
-          <button onClick={handleEnrollClick} className="enroll-btn" aria-label="Enroll Button">
-            Enroll to Get Started
-          </button>
-
-          {enrolled && <p style={{ color: "#28a745", fontWeight: "bold" }}>✅ Enrollment Started!</p>}
-
+          {/* Course Benefits */}
           <div className="course-benefits">
             <p>✅ Learn Python step-by-step from start to finish.</p>
             <p>✅ Solve 100+ practice problems in real-time.</p>
             <p>✅ Get certified and prepare for your first Python interview.</p>
+
+            {/* Buttons */}
+            <div className="course-buttons-paid">
+              <div className="buy-add-buttons">
+                <button className="buy-button" onClick={handleBuyNow}>Buy Now</button>
+                <button className="cart-button" onClick={handleAddToCart}>
+                  {isInCart ? "Remove from Cart" : "Add to Cart"}
+                </button>
+              </div>
+
+              <div className="wishlist-container">
+                <button className="wishlist-button" onClick={handleWishlistClick}>
+                  {isWishlisted ? "🩷 Wishlisted" : "🤍 Add to Wishlist"}
+                </button>
+              </div>
+            </div>
           </div>
-          <p className="salary">💰 Average Salary (IN): ₹5,80,000</p>
-          <p>📦 Prerequisites: None</p>
-          <hr className="border-t-2 border- darkgray-300 mb-4" />
-          {/* === Job Notification Section (Moved here) === */}
+
+          {/* Job Notification Section */}
           <div className="job-notification-box">
             <h2>Stay Updated with Job Notifications</h2>
             <p>Get the latest job opportunities in the tech industry tailored to your skills.</p>
@@ -81,9 +133,9 @@ const Enrollment = () => {
         </div>
       </aside>
 
-      {/* === Main Content === */}
+      {/* Main Content */}
       <main className="main-content">
-        {/* === Course Intro === */}
+        {/* Course Intro */}
         <section className="course-container">
           <div className="course-left">
             <img
@@ -108,17 +160,16 @@ const Enrollment = () => {
           </div>
         </section>
 
-        {/* === Learning Path Overview === */}
+        {/* Learning Path Overview */}
         <section className="learning-overview">
           <h2>Learning Path Overview</h2>
           {courseTitles.map((title, index) => (
             <article className="course-box" key={index}>
               <h4>Course {index + 1}</h4>
               <h3>{title}</h3>
-              <p>Course {index + 1} description goes here. Learn and practice key skills.</p>
+              <p>{courseDescriptions[index]}</p>
             </article>
           ))}
-
           <div className="start-learning-container">
             <button className="start-learning-btn" onClick={handleMenuClick}>
               Get Started Learning
@@ -126,7 +177,7 @@ const Enrollment = () => {
           </div>
         </section>
 
-        {/* === Projects Section === */}
+        {/* Projects Section */}
         <section className="projects-section">
           <h2>
             Learn practically <br />
@@ -146,7 +197,7 @@ const Enrollment = () => {
           </div>
         </section>
 
-        {/* === Certificate Section === */}
+        {/* Certificate Section */}
         <section className="certificate-section-wrapper">
           <div className="certificate-section">
             <img src={certificateImg} alt="Certificate Preview" className="cert-preview" />
@@ -159,19 +210,19 @@ const Enrollment = () => {
             </div>
           </div>
         </section>
-
-        {/* === Certificate Preview Popup === */}
-        {showPopup && (
-          <div className="popup-overlay" onClick={togglePopup}>
-            <div className="popup" onClick={(e) => e.stopPropagation()}>
-              <img src={certificateImg} alt="Full Certificate Preview" />
-              <button className="popup-close" onClick={togglePopup}>
-                ×
-              </button>
-            </div>
-          </div>
-        )}
       </main>
+
+      {/* Certificate Preview Popup */}
+      {showPopup && (
+        <div className="popup-overlay" onClick={togglePopup}>
+          <div className="popup" onClick={(e) => e.stopPropagation()}>
+            <img src={certificateImg} alt="Full Certificate Preview" />
+            <button className="popup-close" onClick={togglePopup}>
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

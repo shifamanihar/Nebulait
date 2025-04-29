@@ -61,3 +61,81 @@
     font-size: 14px;
     color: #aab3c5;
   }
+
+  /* Mobile Devices */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 15px;  /* Reduced padding for mobile */
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;  /* Stack the sections vertically on small screens */
+    gap: 30px;  /* Reduce gap between sections */
+  }
+
+  .footer-title {
+    font-size: 16px;  /* Slightly smaller font size */
+  }
+
+  .footer-link {
+    font-size: 13px;  /* Smaller font size for links */
+    margin-bottom: 8px;  /* Reduced margin between links */
+  }
+
+  .bottom-footer {
+    font-size: 12px;  /* Smaller font size for bottom footer text */
+  }
+
+  .free-badge {
+    font-size: 9px;  /* Slightly smaller badge */
+    padding: 2px 4px;
+  }
+}
+
+/* Tablet Devices */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 50px 20px;  /* Slightly reduced padding for tablets */
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);  /* Two columns on tablets */
+    gap: 35px;
+  }
+
+  .footer-title {
+    font-size: 17px;  /* Slightly smaller font size for tablet */
+  }
+
+  .footer-link {
+    font-size: 14px;  /* Maintain smaller font size for links */
+  }
+
+  .bottom-footer {
+    font-size: 13px;  /* Adjust font size for tablet */
+  }
+}
+
+/* Large Screens (Desktop) */
+@media (min-width: 1025px) {
+  .footer {
+    padding: 60px 20px;  /* Maintain original padding for large screens */
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(4, 1fr);  /* 4 columns for larger screens */
+    gap: 40px;
+  }
+
+  .footer-title {
+    font-size: 18px;  /* Original font size */
+  }
+
+  .footer-link {
+    font-size: 14px;  /* Original font size */
+  }
+
+  .bottom-footer {
+    font-size: 14px;  /* Original font size */
+  }
+}

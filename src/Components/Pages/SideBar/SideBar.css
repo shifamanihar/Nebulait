@@ -68,3 +68,89 @@
 .submenu-item:last-child {
   margin-bottom: 0;
 }
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;  /* Take full width on smaller screens */
+    padding: 15px;
+  }
+
+  .menu-card {
+    border-left: 5px solid #f687bd;  /* Slightly thinner border for mobile */
+    margin-bottom: 12px;  /* Adjust spacing for smaller screens */
+  }
+
+  .menu-title {
+    font-size: 14px;  /* Smaller font size for mobile */
+    padding: 15px 20px;  /* Less padding for mobile */
+  }
+
+  .submenu-item {
+    font-size: 0.9rem;  /* Smaller font size for items */
+    padding: 8px 14px;  /* Adjust padding for mobile */
+  }
+
+  .submenu-item:hover {
+    transform: scale(1.01);  /* Slightly less scaling */
+  }
+
+  .arrow {
+    font-size: 14px;  /* Smaller arrow on mobile */
+  }
+
+  .menu-card:hover .arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* Tablet Devices */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 280px;  /* Narrower sidebar for tablet */
+    padding: 20px;
+  }
+
+  .menu-card {
+    border-left: 6px solid #f687bd;
+    margin-bottom: 14px;  /* Adjust margin for tablet */
+  }
+
+  .menu-title {
+    font-size: 15px;  /* Slightly smaller font for tablet */
+    padding: 16px 22px;  /* Slight padding reduction */
+  }
+
+  .submenu-item {
+    font-size: 0.95rem;  /* Slightly smaller font for tablet */
+    padding: 8px 16px;  /* Adjust padding for tablet */
+  }
+
+  .submenu-item:hover {
+    transform: scale(1.02);  /* Normal scaling for tablet */
+  }
+
+  .arrow {
+    font-size: 15px;  /* Adjust arrow size for tablet */
+  }
+}
+
+/* Large Screens (Desktop) */
+@media (min-width: 1025px) {
+  .sidebar {
+    width: 350px;  /* Maintain original width for large screens */
+    padding: 20px;
+  }
+
+  .menu-card {
+    margin-bottom: 16px;
+  }
+
+  .menu-title {
+    font-size: 16px;
+  }
+
+  .submenu-item {
+    font-size: 1rem;
+  }
+}

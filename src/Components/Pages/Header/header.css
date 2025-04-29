@@ -13,10 +13,9 @@ a {
 .header {
   padding: 10px 0;
   width: 100%;
-  position: fixed ;
+  position: fixed;
   z-index: 100;
-  background:white;
-  
+  background: white;
 }
 
 .header .images-wrapper img {
@@ -153,14 +152,13 @@ a {
   border: none;
 }
 
-
 .profile-dropdown {
   position: relative;
 }
 
 .profile-btn {
   margin: 0;
-  background-color:transparent;
+  background-color: transparent;
   border: none;
   display: flex;
   align-items: center;
@@ -178,11 +176,11 @@ a {
   margin-right: 15px;
 }
 
-.profile-dropdown .dropdown-menu  {
+.profile-dropdown .dropdown-menu {
   position: absolute;
   top: 135%;
   right: -5%;
-  background-color:  #f5f4f4;
+  background-color: #f5f4f4;
   color: #000000;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(164, 4, 4, 0.1);
@@ -191,26 +189,25 @@ a {
   padding: 8px 0;
   margin: 0;
 }
+
 .user-info {
   display: flex;
   align-items: center;
   padding: 10px;
-
 }
 
-.user-info .email{
+.user-info .email {
   color: #c42c8a;
   cursor: pointer;
   font-size: 13px;
 }
 
-.user-info .email:hover{
+.user-info .email:hover {
   color: rgb(2, 2, 2);
 }
 
-
 .user-img {
-  width:30px;
+  width: 30px;
   height: 30px;
   border-radius: 50%;
   margin-right: 10px;
@@ -227,9 +224,11 @@ a {
   color: #080808;
   font-size: 14px;
 }
-.dropdown-item:focus, .dropdown-item:hover {
-  color: #9f9f9f; 
- background-color: transparent;
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: #9f9f9f;
+  background-color: transparent;
 }
 
 .right-end-btn {
@@ -239,4 +238,92 @@ a {
 
 .right-end-btn li {
   margin-left: 10px;
+}
+
+/* Tablet View (<= 991px) */
+@media (max-width: 991px) {
+  .header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .search-box {
+    max-width: 90%;
+    margin: 10px 0;
+  }
+
+  .dropdown_menu {
+    width: 95%;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .dropdown_menu .left-box,
+  .dropdown_menu .right-box {
+    width: 100%;
+    border-right: none;
+    padding: 10px;
+  }
+
+  .course-detail-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-detail-box .topic-list,
+  .course-detail-box .material-list {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .dropdown_menu .pro-box,
+  .course-detail-box {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .right-end-btn {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+/* Mobile View (<= 576px) */
+@media (max-width: 576px) {
+  .header {
+    padding: 8px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header .images-wrapper img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .search-box input {
+    padding: 8px 35px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .search-box span {
+    font-size: 16px;
+  }
+
+  .right-end-btn .phone-btn,
+  .right-end-btn .pro-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .dropdown_menu {
+    top: 75px;
+  }
+
+  .profile-dropdown .dropdown-menu {
+    top: 120%;
+    right: 0;
+  }
 }
